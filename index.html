@@ -1,1 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birhanu Mogess | Aspiring Data Scientist</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Add this to index.html head section -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body class="home-page">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <p>Loading Portfolio...</p>
+    </div>
+    
+    <div class="portfolio-container">
+        <!-- LEFT COLUMN: SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="profile-section">
+                <img src="assetes\images\birhanu.jpg" alt="Birhanu Moges" class="profile-img">
+                <h1 class="profile-name">Birhanu Moges</h1>
+                <p class="profile-role">Data Scientist</p>
+                <!--<p class="profile-subtitle">Machine Learning | AI | Python Developer</p>-->
+            </div>
 
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="#certifications" class="nav-link"><i class="fas fa-certificate"></i> Certificats</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Social Links -->
+            <div class="social-section">
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://kaggle.com" target="_blank" title="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="sidebar-footer">
+                <p>&copy; 2025 Birhanu Moges</p>
+                <p class="visitor-count">Visitors: <span id="visitorCount">0</span></p>
+            </footer>
+        </aside>
+
+        <!-- RIGHT COLUMN: MAIN CONTENT -->
+        <main class="main-content">
+            <!-- HERO SECTION -->
+            <section id="home" class="section hero-section">
+                <div class="hero-content">
+                    <h3 class="hero-title">Hello, my name is <span class="name">Birhanu Moges</span> </h3>
+                    <h3 class="my-profession">I'm a <span class="typing">Data Scientist</span></h3>
+                    <!--<p class="hero-subtitle">Data Science Student | Machine Learning Enthusiast</p>-->
+                    <p class="hero-description">
+                        Welcome to my portfolio! I'm passionate about uncovering patterns in data and building 
+                        intelligent solutions. Specially in Python, machine learning, data visualization, 
+                        and turning complex data into actionable insights.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
+                        <button class="btn btn-outline" id="downloadCV">
+                            <i class="fas fa-download"></i> Download CV
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- ABOUT SECTION -->
+            <section id="about" class="section about-section">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate Data Scientist from Ethiopia</p>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Hello! I'm <strong>Birhanu Moges</strong>, a dedicated Data Science student with a 
+                            passion for solving real-world problems using data. My journey in data science 
+                            began with curiosity about patterns in everyday life and has evolved into a 
+                            pursuit of mastery in machine learning and artificial intelligence.
+                        </p>
+                        
+                        <p>
+                            I believe that data tells stories, and I'm passionate about uncovering these 
+                            narratives through statistical analysis, machine learning models, and compelling 
+                            visualizations. Every dataset presents a new challenge and opportunity to learn.
+                        </p>
+                        <button class="btn btn-primary" id="readmore" onclick="goToContact()">
+                            <i class="fa-download"></i> More About Me
+                        </button>
+
+                        <script>
+                        function goToContact() {
+                            // If contact section is on same page
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }
+                        </script>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <h3>5+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>6</h3>
+                            <p>Certifications</p>
+                        </div>
+                        <!--<div class="stat-card">
+                            <h3>500+</h3>
+                            <p>Hours of Learning</p>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="section projects-section">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Hands-on projects showcasing my data science skills</p>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-badge">Machine Learning</div>
+                        <div class="project-image-container" id="carousel1">
+                            <!-- Slides for Project 1 -->
+                            <div class="project-image-slide active" style="background-image: url('assetes/images/project1.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project2.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project3.jpg');"></div>
+                            
+                            <!-- Carousel Controls -->
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active" data-slide="0"></span>
+                                <span class="carousel-dot" data-slide="1"></span>
+                                <span class="carousel-dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cafe Sales Forecasting & Recommendation System</h3>
+                            <p class="project-date"><i class="far fa-calendar"></i> January 2024</p>
+                            <p class="project-description">
+                                Built a machine learning model to predict Cafe Sales with 94% accuracy 
+                                using Scikit-learn and advanced feature engineering.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project1.html" class="btn btn-small">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                                <a href="https://github.com" target="_blank" class="btn btn-small btn-outline">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-badge">Data Analysis</div>
+                        <div class="project-image-container" id="carousel2">
+                            <!-- Slides for Project 2 -->
+                            <div class="project-image-slide active" style="background-image: url('assetes/images/project2.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project1.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project3.jpg');"></div>
+                            
+                            <!-- Carousel Controls -->
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active" data-slide="0"></span>
+                                <span class="carousel-dot" data-slide="1"></span>
+                                <span class="carousel-dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>students performance and mental health analysis</h3>
+                            <p class="project-date"><i class="far fa-calendar"></i> December 2023</p>
+                            <p class="project-description">
+                                Comprehensive analysis of student performance and mental health with interactive visualizations 
+                                and dashboard showing trends and patterns.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Plotly</span>
+                                <span class="tech-tag">Seaborn</span>
+                                <span class="tech-tag">Jupyter</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project2.html" class="btn btn-small">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                                <a href="https://github.com" target="_blank" class="btn btn-small btn-outline">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-badge">Clustering</div>
+                        <div class="project-image-container" id="carousel3">
+                            <!-- Slides for Project 3 -->
+                            <div class="project-image-slide active" style="background-image: url('assetes/images/project3.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project1.jpg');"></div>
+                            <div class="project-image-slide" style="background-image: url('assetes/images/project2.jpg');"></div>
+                            
+                            <!-- Carousel Controls -->
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn next-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Dots Indicator -->
+                            <div class="carousel-dots">
+                                <span class="carousel-dot active" data-slide="0"></span>
+                                <span class="carousel-dot" data-slide="1"></span>
+                                <span class="carousel-dot" data-slide="2"></span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>household-accessibility-analysis</h3>
+                            <p class="project-date"><i class="far fa-calendar"></i> November 2023</p>
+                            <p class="project-description">
+                                K-means clustering for customer segmentation to improve marketing 
+                                strategies and customer targeting.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">K-means</span>
+                                <span class="tech-tag">PCA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project3.html" class="btn btn-small">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                                <a href="https://github.com" target="_blank" class="btn btn-small btn-outline">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-all">
+                    <a href="projects.html" class="btn btn-outline">
+                        <i class="fas fa-list"></i> View All Projects
+                    </a>
+                </div>
+            </section>
+
+            <!-- SKILLS SECTION -->
+            <section id="skills" class="section skills-section">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technical expertise and tools I work with</p>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">R</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cogs"></i> Data Science</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Pandas</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Scikit-learn</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">TensorFlow</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Matplotlib</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Seaborn</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Power BI</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ✅ UPDATED: Certifications Section - Now Active -->
+            <section id="certifications" class="section certifications-section">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <p class="section-subtitle">Professional certifications and academic achievements earned</p>
+                
+                <div class="certifications-grid">
+                    <!-- Certification 1 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">Verified</div>
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3>Python for Data Science & Machine Learning</h3>
+                                <p class="cert-org">IBM Data Science Professional Certificate</p>
+                                <p class="cert-date"><i class="far fa-calendar"></i> Issued: December 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-skills">
+                            <h4>Skills Covered</h4>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Python</span>
+                                <span class="cert-tag">Pandas</span>
+                                <span class="cert-tag">NumPy</span>
+                                <span class="cert-tag">Scikit-learn</span>
+                                <span class="cert-tag">Data Visualization</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-actions">
+                            <a href="assetes/certificates/mmm.pdf" target="_blank" class="cert-btn cert-btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                            <a href="https://www.udacity.com/certificate/e/c1ed3438-3017-11f0-a7c1-27101f7cb46f" target="_blank" class="cert-btn cert-btn-secondary">
+                                <i class="fas fa-shield-alt"></i> Verify Online
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certification 2 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">Advanced</div>
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3>Machine Learning</h3>
+                                <p class="cert-org">Stanford University | Coursera</p>
+                                <p class="cert-date"><i class="far fa-calendar"></i> Issued: November 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-skills">
+                            <h4>Skills Covered</h4>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Supervised Learning</span>
+                                <span class="cert-tag">Neural Networks</span>
+                                <span class="cert-tag">Deep Learning</span>
+                                <span class="cert-tag">Unsupervised Learning</span>
+                                <span class="cert-tag">Best Practices</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-actions">
+                            <a href="assetes/certificates/mmm.pdf" target="_blank" class="cert-btn cert-btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                            <a href="https://www.udacity.com/certificate/e/d770124c-43d8-11f0-9e2c-238ce4461d72" target="_blank" class="cert-btn cert-btn-outline">
+                                <i class="fas fa-graduation-cap"></i> Course Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certification 3 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">Specialization</div>
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3>SQL for Data Science</h3>
+                                <p class="cert-org">University of California, Davis</p>
+                                <p class="cert-date"><i class="far fa-calendar"></i> Issued: October 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-skills">
+                            <h4>Skills Covered</h4>
+                            <div class="cert-tags">
+                                <span class="cert-tag">SQL Queries</span>
+                                <span class="cert-tag">Database Design</span>
+                                <span class="cert-tag">Data Aggregation</span>
+                                <span class="cert-tag">Joins & Subqueries</span>
+                                <span class="cert-tag">Data Manipulation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-actions">
+                            <a href="assetes/certificates/mmm.pdf" target="_blank" class="cert-btn cert-btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                            <a href="https://coursera.org/share/your-credential-id" target="_blank" class="cert-btn cert-btn-secondary">
+                                <i class="fas fa-share-alt"></i> Show Credential 
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Certification 4 -->
+                    <div class="cert-card">
+                        <div class="cert-badge">Expert</div>
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3>Data Visualization with Tableau</h3>
+                                <p class="cert-org">Google Data Analytics Professional</p>
+                                <p class="cert-date"><i class="far fa-calendar"></i> Issued: September 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-skills">
+                            <h4>Skills Covered</h4>
+                            <div class="cert-tags">
+                                <span class="cert-tag">Tableau</span>
+                                <span class="cert-tag">Dashboard Design</span>
+                                <span class="cert-tag">Storytelling</span>
+                                <span class="cert-tag">Interactive Viz</span>
+                                <span class="cert-tag">Best Practices</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-actions">
+                            <a href="assetes/certificates/mmm.pdf" target="_blank" class="cert-btn cert-btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Certificate
+                            </a>
+                            <a href="https://coursera.org/share/your-credential-id" target="_blank" class="cert-btn cert-btn-secondary">
+                                <i class="fas fa-share-alt"></i> Share Credential
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-all">
+                    <a href="certificates.html" class="btn btn-outline">
+                        <i class="fas fa-list"></i> View All Certifications
+                        <span class="nav-badge">6+</span>
+                    </a>
+                </div>
+            </section>
+            <!-- CONTACT SECTION - TWO ROW LAYOUT -->
+            <section id="contact" class="section contact-section">
+                <h2 class="section-title">Get In Touch</h2>
+                
+                <div class="contact-container">
+                    <!-- FIRST ROW: Title + Social Buttons -->
+                    <div class="contact-top-row">
+                        <div class="contact-intro">
+                            <h2>Let's Discuss Data, Projects, or Opportunities</h2>
+                            <p>I'm always open to discussing data science projects, collaboration opportunities, or just chatting about the latest trends in AI and machine learning.</p>
+                        </div>
+                        
+                        <div class="contact-social-row">
+                            <h3>Connect With Me</h3>
+                            <div class="social-buttons-row">
+                                <a href="https://linkedin.com" class="social-btn-row linkedin" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com" class="social-btn-row github" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://kaggle.com" class="social-btn-row kaggle" target="_blank">
+                                    <i class="fab fa-kaggle"></i>
+                                    <span>Kaggle</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SECOND ROW: Contact Form -->
+                    <div class="contact-form-row">
+                        <h2>Send Me a Message</h2>
+                        
+                        <div class="contact-form-container">
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Full Name *</label>
+                                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                                </div>
+                                
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i> Send Message
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <!-- Contact Info Below Form -->
+                            <div class="contact-info-row">
+                                <div class="contact-info-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <h3>Email</h3>
+                                    <p>birhanumoges726@gmail.com</p>
+                                </div>
+                                
+                                <div class="contact-info-item">
+                                    <i class="fas fa-phone"></i>
+                                    <h3>Phone</h3>
+                                    <p>+251 989895098</p>
+                                </div>
+                                
+                                <div class="contact-info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h3>Location</h3>
+                                    <p>Debre Birhan, Ethiopia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <!-- 🔗 CONNECTED JAVASCRIPT FILES -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/form.js"></script>
+    <script src="scripts/animations.js"></script>
+     
+</body>
+</html>
