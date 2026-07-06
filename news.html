@@ -1396,7 +1396,274 @@
 
     <!-- Notification Container -->
     <div class="notification-container" id="notificationContainer"></div>
+    <script>
+        // ========== MAIN JAVASCRIPT ==========
+        
+        // DOM Elements
+        const loadingScreen = document.getElementById('loadingScreen');
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const backToTop = document.getElementById('backToTop');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
 
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile Menu
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        }
+
+        // Close sidebar on click outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Navigation Active State
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    sidebar.classList.remove('open');
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Back to top button
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Project Filtering
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Typed.js
+        new Typed('.typed-text', {
+            strings: ['Data Scientist', 'Machine Learning Engineer', 'Data Analyst', 'Problem Solver'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true
+        });
+
+        // Visitor Count
+        let count = localStorage.getItem('visitorCount');
+        if (!count) {
+            count = Math.floor(Math.random() * 1000) + 100;
+            localStorage.setItem('visitorCount', count);
+        }
+        document.getElementById('visitorCount').textContent = count;
+
+        // Download CV
+        document.getElementById('downloadCV').addEventListener('click', () => {
+            showNotification('CV download started!', 'success');
+        });
+
+        // More About Button
+        document.getElementById('moreAboutBtn').addEventListener('click', () => {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showNotification('Contact me for more information!', 'info');
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                showNotification('Please fill all required fields', 'error');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email', 'error');
+                return;
+            }
+            
+            showNotification('Message sent successfully!', 'success');
+            contactForm.reset();
+        });
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            const container = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i> <span>${message}</span>`;
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // ===== FIXED LIGHT / DARK TOGGLE =====
+        const themeToggler = document.getElementById('themeToggler');
+        const moonIcon = document.getElementById('moonIcon');
+        const sunIcon = document.getElementById('sunIcon');
+
+        // Load saved theme on start
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+            document.body.classList.add('light-theme');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+        }
+
+        // Toggle theme
+        themeToggler.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+
+            const isLight = document.body.classList.contains('light-theme');
+
+            if (isLight) {
+                localStorage.setItem('portfolio-theme', 'light');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'inline-block';
+                showNotification('Light mode enabled', 'success');
+            } else {
+                localStorage.setItem('portfolio-theme', 'dark');
+                moonIcon.style.display = 'inline-block';
+                sunIcon.style.display = 'none';
+                showNotification('Dark mode enabled', 'success');
+            }
+        });
+
+        // Color Themes
+        function setActiveStyle(color) {
+            document.documentElement.style.setProperty('--primary-color', 
+                color === 'color-1' ? '#2563eb' :
+                color === 'color-2' ? '#f021b2' :
+                color === 'color-3' ? '#37b182' : '#fa5b0f'
+            );
+            document.documentElement.style.setProperty('--primary-dark', 
+                color === 'color-1' ? '#1d4ed8' :
+                color === 'color-2' ? '#d81b9e' :
+                color === 'color-3' ? '#2d9a71' : '#e04e0c'
+            );
+            document.documentElement.style.setProperty('--secondary-color', 
+                color === 'color-1' ? '#7c3aed' :
+                color === 'color-2' ? '#ec4899' :
+                color === 'color-3' ? '#10b981' : '#f59e0b'
+            );
+            
+            localStorage.setItem('portfolio-color', color);
+            showNotification(`Theme color changed`, 'success');
+        }
+
+        // Style Switcher
+        const styleSwitcher = document.querySelector('.style-switcher');
+        const styleToggler = document.querySelector('.style-switcher-toggler');
+        
+        styleToggler.addEventListener('click', () => {
+            styleSwitcher.classList.toggle('open');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!styleSwitcher.contains(e.target) && !styleToggler.contains(e.target)) {
+                styleSwitcher.classList.remove('open');
+            }
+        });
+
+        // Load saved color
+        const savedColor = localStorage.getItem('portfolio-color');
+        if (savedColor) {
+            setActiveStyle(savedColor);
+        }
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('open');
+                }
+            });
+    });
+
+        console.log('%c🚀 Portfolio Loaded Successfully!', 'color: #fa5b0f; font-size: 16px; font-weight: bold;');
+    </script>
     
 </body>
 </html>
