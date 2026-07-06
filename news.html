@@ -1108,5 +1108,295 @@
         }
     </style>
 </head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <p>Loading Portfolio...</p>
+    </div>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="portfolio-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="profile-section">
+
+                <img src="assets/images/birhanu.jpg"
+                    alt="Birhanu Moges"
+                    class="profile-img"
+                    id="profileImg"
+                    onerror="this.style.display='none'; document.getElementById('profileFallback').style.display='flex';">
+                <h1 class="profile-name">Birhanu Moges</h1>
+                <p class="profile-role">Data Scientist</p>
+
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-code-branch"></i> Projects</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-chart-line"></i> Skills</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-section">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/birhanu-moges" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/birhanumoges" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/birhanumoges" target="_blank"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://t.me/birhanumo" target="_blank"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+
+            <footer class="sidebar-footer">
+                <p>&copy; 2026 Birhanu Moges</p>
+                <p class="visitor-count">
+                    <i class="fas fa-eye"></i>
+                    <span id="visitorCount">0</span> Visitors
+                </p>
+            </footer>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="home" class="section hero-section">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Birhanu Moges</span></h1>
+                <div class="hero-typed">
+                    <span class="typed-text"></span>
+                </div>
+                
+                <p class="hero-description">
+                    <strong>Welcome to my portfolio.</strong> I am a passionate Data Scientist who works with machine learning, deep learning, and data visualization, and I enjoy turning complex data into clear and useful insights.</p>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Work</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+                    <button class="btn btn-secondary" id="downloadCV"><i class="fas fa-download"></i> Download CV</button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section about-section">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Get to know me better</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm <strong>Birhanu Moges</strong>, a dedicated Data Scientist. I started learning data science because I was curious about patterns in everyday life, and now I use that knowledge to help organizations make better decisions using data.
+                        <p>With expertise in Python, machine learning, and statistical analysis, I've worked on diverse projects ranging from predictive modeling to natural language processing.</p>
+                        <div class="about-buttons">
+                            <a href="#contact" class="btn btn-primary">Contact Me</a>
+                            <button class="btn btn-outline" id="moreAboutBtn">Read More</button>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats-grid">
+                        <div class="stat-card"><div class="stat-icon"><i class="fas fa-code"></i></div><div class="stat-number">5+</div><div class="stat-text">Projects</div></div>
+                        <div class="stat-card"><div class="stat-icon"><i class="fas fa-certificate"></i></div><div class="stat-number">5</div><div class="stat-text">Certifications</div></div>
+                        </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section projects-section">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Showcasing my best work</p>
+                </div>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="analysis">Data Analysis</button>
+                    <button class="filter-btn" data-filter="nlp">NLP</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-content">
+                            <div class="project-badge">Machine Learning</div>
+                            <h3>Ethiopian Food Market Analysis</h3>
+                            <p>NLP and Machine Learning analysis of Ethiopian food marketS to monitor food security, and identify trends.</p>
+                            <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>Pandas</span></div>
+                            <div class="project-links"><a href="https://github.com/birhanumoges/Ethiopia-food-security-analytics" target="_blank" class="btn btn-small btn-outline">GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="analysis">
+                        <div class="project-image"><i class="fas fa-chart-pie"></i></div>
+                        <div class="project-content">
+                            <div class="project-badge">Data Analysis</div>
+                            <h3>Student Performance Analysis</h3>
+                            <p>Comprehensive analysis of student performance metrics with interactive dashboards.</p>
+                            <div class="project-tech"><span>Python</span><span>Plotly</span><span>Seaborn</span></div>
+                            <div class="project-links"><a href="https://github.com/birhanumoges/Students-Acadamic-Performance-Analysis" target="_blank" class="btn btn-small btn-outline">GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="ml">
+                        <div class="project-image"><i class="fas fa-users"></i></div>
+                        <div class="project-content">
+                            <div class="project-badge">Machine Learning</div>
+                            <h3>Mental Health Classification</h3>
+                            <p>Predict student mental health risk  with machine learning models.</p>
+                            <div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>K-means</span></div>
+                            <div class="project-links"><a href="https://github.com/birhanumoges/Students-mental-health-analysis" target="_blank" class="btn btn-small btn-outline">GitHub</a></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="nlp">
+                        <div class="project-image"><i class="fas fa-language"></i></div>
+                        <div class="project-content">
+                            <div class="project-badge">NLP</div>
+                            <h3>Sentiment Analysis Engine</h3>
+                            <p>Built a sentiment analysis model for customer reviews with 93% accuracy.</p>
+                            <div class="project-tech"><span>Python</span><span>Transformers</span><span>BERT</span></div>
+                            <div class="project-links"><a href="https://github.com/birhanumoges/Social-Media-Comment-Analysis" target="_blank" class="btn btn-small btn-outline">GitHub</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-all">
+                    <a href="https://github.com/birhanumoges" class="btn btn-outline"><i class="fas fa-arrow-right"></i> View All Projects</a>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section skills-section">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Technologies and tools I work with</p>
+                </div>
+                
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-item"><div class="skill-info"><span>Python</span><span>90%</span></div><div class="progress-bar"><div class="progress" style="width: 90%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>SQL</span><span>85%</span></div><div class="progress-bar"><div class="progress" style="width: 75%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>R</span><span>70%</span></div><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-line"></i> Data Science</h3>
+                        <div class="skill-item"><div class="skill-info"><span>Pandas/NumPy</span><span>90%</span></div><div class="progress-bar"><div class="progress" style="width: 90%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>Scikit-learn</span><span>85%</span></div><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>TensorFlow</span><span>70%</span></div><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+                        <div class="skill-item"><div class="skill-info"><span>Matplotlib/Seaborn</span><span>85%</span></div><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>Plotly/Dash</span><span>75%</span></div><div class="progress-bar"><div class="progress" style="width: 75%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>Power BI</span><span>70%</span></div><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-bar"></i> Others</h3>
+                        <div class="skill-item"><div class="skill-info"><span>Git/Github</span><span>85%</span></div><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>HTML</span><span>75%</span></div><div class="progress-bar"><div class="progress" style="width: 75%"></div></div></div>
+                        <div class="skill-item"><div class="skill-info"><span>CSS</span><span>70%</span></div><div class="progress-bar"><div class="progress" style="width: 70%"></div></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="section services-section">
+                <div class="section-header">
+                    <h2 class="section-title">What I Do</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Transformative services that turn data into business growth</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h3>Predictive Analytics</h3><p>Build accurate forecasting models to predict sales, customer behavior, and market trends.</p><div class="service-features"><span>Sales Forecast</span><span>Churn Prediction</span></div></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-chart-pie"></i></div><h3>Data Visualization</h3><p>Create interactive dashboards and compelling visual stories from complex data.</p><div class="service-features"><span>Power BI</span><span>Tableau</span></div></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-brain"></i></div><h3>Machine Learning</h3><p>Develop custom ML models for classification, regression, clustering, and more.</p><div class="service-features"><span>Classification</span><span>Regression</span></div></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-language"></i></div><h3>NLP Solutions</h3><p>Extract insights from text data using advanced natural language processing techniques.</p><div class="service-features"><span>Sentiment Analysis</span><span>NER</span></div></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-database"></i></div><h3>Data Engineering</h3><p>Build robust ETL pipelines and data infrastructure for your analytics needs.</p><div class="service-features"><span>ETL Pipelines</span><span>Data Cleaning</span></div></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Data Annotation & Cleaning Strategy</h3><p>For accurate data-driven decisions through effective data labeling, cleaning.</p><div class="service-features"><span>data labeling</span><span>Annotation</span></div></div></div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">Let's work together on your next project</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><h3>Location</h3><p>Debre Birhan, Ethiopia</p></div>
+                        <div class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>Email</h3><p>birhanumoges726@gmail.com</p></div>
+                        <div class="contact-card"><div class="contact-icon"><i class="fas fa-phone"></i></div><h3>Phone</h3><p>+251 989895098</p></div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group"><input type="text" id="name" placeholder="Your Name" required></div>
+                                <div class="form-group"><input type="email" id="email" placeholder="Your Email" required></div>
+                            </div>
+                            <div class="form-group"><input type="text" id="subject" placeholder="Subject"></div>
+                            <div class="form-group"><textarea id="message" rows="5" placeholder="Your Message" required></textarea></div>
+                            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="main-footer">
+                <div class="footer-content">
+                    <p>&copy; 2026 Birhanu Moges. All rights reserved.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/birhanu-moges" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/birhanumoges" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.kaggle.com/birhanumoges" target="_blank"><i class="fab fa-kaggle"></i></a>
+                        <a href="https://t.me/birhanumo" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    
+    <div class="theme-toggler" id="themeToggler">
+        <i class="fas fa-moon" id="moonIcon"></i>
+        <i class="fas fa-sun" id="sunIcon" style="display:none;"></i>
+    </div>
+    <!-- Style Switcher -->
+    <div class="style-switcher">
+        <div class="style-switcher-toggler"><i class="fas fa-cog fa-spin"></i></div>
+        <!--div class="theme-toggler"><i class="fas fa-moon"></i><i class="fas fa-sun" style="display: none;"></i></div-->
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    
+</body>
 </html>
