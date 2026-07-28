@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Birhanu Moges</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/style-switcher.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .section-header {
+            margin-bottom: 3rem;
+        }
+        
+        .section-description {
+            max-width: 800px;
+            margin: 1rem auto 2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="assetes/images/birhanu.jpg" alt="Birhanu Moges" class="profile-img">
+                <h1>Birhanu Moges</h1>
+                <p class="profile-role">Aspiring Data Scientist</p>
+            </div>
 
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#projects" class="nav-link"><i class="fas fa-code"></i> Featured Projects</a></li>
+                    <li><a href="#all-projects" class="nav-link active"><i class="fas fa-list"></i> All Projects</a></li>
+                    <li><a href="index.html#skills" class="nav-link"><i class="fas fa-tools"></i> Skills</a></li>
+                    <li><a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="all-projects" class="section">
+                <div class="section-header">
+                    <h1 class="section-title">All Data Science Projects</h1>
+                    <h4 class="hero-title">Transforming Data into Insights</h4>
+                    <p class="section-description">
+                        Explore my complete portfolio of data science and machine learning projects. 
+                        Each project demonstrates practical application of data analysis, machine learning algorithms, 
+                        and data visualization techniques to solve real-world problems. From predictive modeling 
+                        to interactive dashboards, these projects showcase my skills in transforming raw data 
+                        into actionable insights.
+                    </p>
+                </div>
+                
+                <div class="projects-grid extended">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-badge">Machine Learning</div>
+                        <div class="project-image">
+                            <img src="assetes/images/project1.jpg" alt="House Price Prediction">
+                        </div>
+                        <div class="project-content">
+                            <h3>House Price Prediction</h3>
+                            <p class="project-date"><i class="far fa-calendar"></i> January 2024</p>
+                            <p class="project-description">
+                                Built a machine learning model to predict house prices with 94% accuracy 
+                                using Scikit-learn and advanced feature engineering.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project1.html" class="btn btn-small">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                                <a href="https://github.com" target="_blank" class="btn btn-small btn-outline">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-badge">Data Analysis</div>
+                        <div class="project-image">
+                            <img src="assetes/images/project2.jpg" alt="COVID-19 Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3>COVID-19 Data Analysis</h3>
+                            <p class="project-date"><i class="far fa-calendar"></i> December 2023</p>
+                            <p class="project-description">
+                                Comprehensive analysis of COVID-19 data with interactive visualizations 
+                                and dashboard showing trends and patterns.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Plotly</span>
+                                <span class="tech-tag">Seaborn</span>
+                                <span class="tech-tag">Jupyter</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/project2.html" class="btn btn-small">
+                                    <i class="fas fa-external-link-alt"></i> View Details
+                                </a>
+                                <a href="https://github.com" target="_blank" class="btn btn-small btn-outline">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SIMPLE FOOTER -->
+            <footer class="simple-footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h3>Birhanu Moges</h3>
+                        <p>Data Science Portfolio</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#contact">Contact</a>
+                        <a href="projects.html">All Projects</a>
+                        <a href="certificates.html">Certificates</a>
+                    </div>
+                    
+                    <div class="footer-social">
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Birhanu Moges. All rights reserved.</p>
+                </div>
+            </footer>
+    <!--================= ✅ MOBILE HEADER WITH PROFILE ===============-->
+    <div class="mobile-header" id="mobileHeader">
+        <!-- Mobile Menu Toggle --
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>-->
+        
+        <!-- Profile on Top -->
+        <div class="mobile-profile">
+            <img src="assetes\images\birhanu.jpg" alt="Birhanu Moges" class="mobile-profile-img">
+            <div class="mobile-profile-info">
+                <span class="mobile-profile-name">Birhanu Moges</span>
+                <span class="mobile-profile-role">Data scientist</span>
+            </div>
+            <div class="back">
+                <li><a href="index.html" class="mobile-link"><i class="fas fa-home"></i> Back to Home</a></li>
+                <li><a href="certificates.html" class="mobile-link"><i class="fas fa-certificate"></i> Go to certificates</a></li>  
+            </div>
+        </div>
+
+    </div>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!--========style Switcher start=============-->
+    <div class="style-switcher" id="styleSwitcher">
+        <div class="style-switcher-toggler s-icon" id="styleSwitcherToggler">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon" id="themeSwitcher">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/style-switcher.js"></script>
+    <script src="scripts/theme-fix.js"></script>
+    <script src="scripts/animations.js"></script>
+
+</body>
+</html>
